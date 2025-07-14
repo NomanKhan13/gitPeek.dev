@@ -8,3 +8,13 @@ export const getUserRepos = async (repoLink, page = 1) => {
     return [];
   }
 };
+
+export const dateFormatter = (rawDate) => {
+  const date = new Date(rawDate);
+  const formatedDate = date?.toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+  });
+  return formatedDate;
+};
